@@ -12,7 +12,6 @@ class Perceptron(object):
       errors = 0
       for xi, target in zip(X, y):
         update = self.eta * (target - self.predict(xi))
-
         self.w_[1:] += update * xi
         self.w_[0] += update
         errors += int(update != 0.0)
